@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './App.css';
+import InputField from './Components/InputField/InputField';
 // import Counter from './Components/Counter';
 // import Users from './Components/Users';
 
@@ -30,9 +31,15 @@ import './App.css';
 
 
 const App:FC =  () => {
+
+  const [todo, setTodo]  = useState<string>('')
+  console.log(todo);
+
+
   return (
     <div className="App">
-      <h1>Note To Do chat</h1>
+      <h1 className='heading'>Note To Do chat</h1>
+      <InputField todo={todo} setTodo={setTodo}  />
     </div>
   );
 }
