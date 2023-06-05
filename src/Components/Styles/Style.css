@@ -40,3 +40,15 @@
   transform: scale(0.7);
   box-shadow: 0 0 4px black;
 }
+
+
+
+/* 0----------------------------------- */
+
+.allTask{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+
+}
