@@ -41,14 +41,74 @@
   box-shadow: 0 0 4px black;
 }
 
-
-
 /* 0----------------------------------- */
 
-.allTask{
+.allTask {
   display: flex;
   justify-content: space-evenly;
   width: 90%;
   flex-wrap: wrap;
+}
 
+/* single tsx*/
+
+.single_task {
+  display: flex;
+  justify-content: space-between;
+  width: 29.5%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background: yellow;
+}
+.single_task_text:focus{
+  outline: none;
+}
+.all_icons{
+  display: flex;
+  gap: 10px;
+}
+.icons{
+  cursor: pointer;
+  font-size:25px;
+  transition:  300ms ease-in-out ;
+}
+.icons:hover{
+  color:rgb(49, 209, 0);
+  border-radius: 100%;
+  transform: scale(1.5);
+}
+
+
+
+
+
+
+
+
+@media (max-width:1200px) {
+
+  .input{
+    width: 95%;
+
+  }
+  .allTask{
+    width: 90%;
+  }
+  .single_task{
+    width: 80%;
+  }
+}
+@media (max-width:700px) {
+
+  .input{
+    width: 95%;
+
+  }
+  .allTask{
+    width: 90%;
+  }
+  .single_task{
+    width: 80%;
+  }
 }
