@@ -46,9 +46,6 @@ const App:FC =  () => {
     }
   }
 
-  
-  console.log(allTask);
-
 
   return (
     <div className="App">

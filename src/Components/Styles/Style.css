@@ -60,10 +60,18 @@
   padding: 20px;
   margin-top: 15px;
   background: yellow;
+  font-size: 25px;
 }
+
 .single_task_text:focus{
   outline: none;
 }
+.single_task_text_finish{
+  text-decoration: line-through;
+  font-style: oblique;
+  color: rgb(38, 24, 240);
+}
+
 .all_icons{
   display: flex;
   gap: 10px;
