@@ -11,28 +11,58 @@ interface Props {
 }
 
 const SingleTask: FC<Props> = ({ task, allTask, setAllTask }) => {
-  const handleDone = (id: number) => {
 
+  const [edit, setEdit ] = useState<boolean>(false);
+  const [editTask, setEditTask] = useState<string>(task.todo);
+
+  // handle completed icon
+  const handleDone = (id: number) => {
     const matchId = allTask.map((element) =>
       element.id === id ? { ...task, isFinish: !task.isFinish } : element
     );
-
     setAllTask(matchId);
   };
 
+
+  // handle delete icons 
+  const handleDelete = (id:number) =>{
+    const filterId = allTask.filter((element)=> element.id !== id )
+    setAllTask(filterId)
+  }
+
+  // handle Edit icons
+  const handleEdit = () =>{
+
+  }
   
   return (
     <form className="single_task">
-      {task.isFinish ? (
-        <span className="single_task_text_finish">{task.todo}</span>
-      ) : (
-        <span className="single_task_text">{task.todo}</span>
-      )}
+      
+
+      {
+        edit ? (
+          <input type="text" value={editTask} onChange={(e) => setEditTask(e.target.value)} className="edit_input"/>
+        ) : (
+          task.isFinish ? (
+            <span className="single_task_text_finish">{task.todo}</span>
+          ) : (
+            <span className="single_task_text">{task.todo}</span>
+          )
+        )
+      }
+
+
       <div className="all_icons">
-        <span className="icons">
+        <span className="icons" onClick={() => {
+
+          if(!edit && !task.isFinish){
+            setEdit(!edit)
+          }
+        }
+        }>
           <AiFillEdit />
         </span>
-        <span className="icons">
+        <span className="icons" onClick={()=> handleDelete(task.id)}>
           <AiFillDelete />
         </span>
         <span className="icons" onClick={() => handleDone(task.id)}>
